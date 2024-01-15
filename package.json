@@ -1,0 +1,19 @@
+{
+	"name": "ppa-personallog",
+	"version": "0.1.2",
+	"description": "Assists with personal log keeping and compilation",
+	"main": "app.ahk",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Chunjee/ppa-personallog"
+	},
+	"dependencies": {
+		"array.ahk": "^0.1.8",
+		"biga.ahk": "^0.57.0",
+		"json.ahk": "^0.1.0",
+		"neutron.ahk": "chunjee/neutron.ahk",
+		"wrappers.ahk": "chunjee/wrappers.ahk"
+	},
+	"author": "Shawn Brooker",
+	"license": "MIT"
+}
