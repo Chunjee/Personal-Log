@@ -172,7 +172,7 @@ sb_openBTN(para_date)
 	global
 
 	; Get the new date user wants to work on
-	userInput_title := InputBox(this_projectName, "Enter the log's title (a date is recomended in YYYY.MM.DD format)")
+	userInput_title := InputBox(this_projectName, "Enter the log's title`na date is recomended in YYYY.MM.DD format")
 	if (userInput_title == "" || ErrorLevel == 1) {
 		return
 	}

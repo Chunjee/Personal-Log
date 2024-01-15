@@ -1,10 +1,10 @@
 <div align="center">
-    <img alt="personal-log header" src="https://github.com/Chunjee/personal-log/blob/master/assets/header.jpeg?raw=true"/>
+    <img alt="personal-log header" src="https://github.com/Chunjee/personal-log/blob/main/assets/header.jpeg?raw=true"/>
 </div>
 
 ## Overview
 
-Personal Log is a very simple application designed to help users maintain a daily log or diary. A minimal GUI offers a blank space to write their daily logs effortlessly.
+Personal Log is a very simple application designed to help users maintain a daily log or diary. A minimal GUI offers a blank space to write.
 
 ## Features
 
