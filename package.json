@@ -5,7 +5,7 @@
 	"main": "app.ahk",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Chunjee/ppa-personallog"
+		"url": "https://github.com/Chunjee/personal-log"
 	},
 	"dependencies": {
 		"biga.ahk": "^0.57.0",

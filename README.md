@@ -1,5 +1,5 @@
 <div align="center">
-    <img alt="array.ahk" src="https://github.com/Chunjee/personal-log/blob/master/assets/header.jpeg"/>
+    <img alt="personal-log header" src="https://github.com/Chunjee/personal-log/blob/master/assets/header.jpeg"/>
 </div>
 
 ## Overview
