@@ -8,7 +8,6 @@
 		"url": "https://github.com/Chunjee/ppa-personallog"
 	},
 	"dependencies": {
-		"array.ahk": "^0.1.8",
 		"biga.ahk": "^0.57.0",
 		"json.ahk": "^0.1.0",
 		"neutron.ahk": "chunjee/neutron.ahk",

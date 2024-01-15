@@ -1,4 +1,6 @@
-# Personal Log
+<div align="center">
+    <img alt="array.ahk" src="https://github.com/Chunjee/personal-log/blob/master/assets/header.jpeg"/>
+</div>
 
 ## Overview
 
@@ -28,7 +30,7 @@ Personal Log is a very simple application designed to help users maintain a dail
 
 #### Export All
 
-- Exports all saved logs to a single file.
+- Exports all logs to a single file.
 - This will recursively check all files and folders in the log parent directory and consolidate all files into one large file for easy uploading or backing up
 - The is no import button however so you should backup the raw .txt log files ideally
 

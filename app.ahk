@@ -5,7 +5,6 @@ SetBatchLines, -1
 
 #Include %A_ScriptDir%\node_modules
 #Include biga.ahk\export.ahk
-#Include array.ahk\export.ahk
 #Include json.ahk\export.ahk
 #Include wrappers.ahk\export.ahk
 #Include neutron.ahk\export.ahk
@@ -199,13 +198,16 @@ sb_exportBTN(neutron, event)
 {
 	global
 
+	event.preventDefault()
+
 	fileDelete(settingsObj.exportFilePath)
-	l_path := settingsObj.saveDirParent "\*.txt", R
-	loop, files, % l_path
+	l_path := settingsObj.saveDirParent "\*.txt"
+	loop, files, % l_path, R
 	{
+		msgbox, % A_LoopFilePath
 		l_contents := fileRead(A_LoopFilePath)
 		l_date := strSplit(A_LoopFileName, ".txt")[1]
-		fileAppend, % "## " l_date "`n" l_contents "`n`n", % settingsObj.exportFilePath
+		fileAppend("## " l_date "`n" l_contents "`n`n", settingsObj.exportFilePath)
 	}
 }
 
