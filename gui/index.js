@@ -1,12 +1,13 @@
 // attach function to tabs that control the footer text
 $(function(){
+    $('#footercontent').addClass('invisible');
+    $('#footercontent').html('I hope you enjoy this application. A <a href="https://paypal.me/chunjee/10usd" target="_blank">donation</a> is kindly requested if you found it useful');
     $("#v-pills-home-tab").on("click", function(){
-        $('#myFooter').removeClass('visible');
-        $('#myFooter').addClass('invisible');
+        $('#footercontent').removeClass('visible');
+        $('#footercontent').addClass('invisible');
     });
-    $("#v-pills-options-tab").on("click", function(){
-        $('#myFooter').removeClass('invisible');
-        $('#myFooter').addClass('visible');
-        $('#footercontent').html('I hope you enjoy this application. A <a href="https://paypal.me/chunjee/10usd" target="_blank">donation</a> is kindly requested if you found it useful');
+    $("#v-pills-settings-tab").on("click", function(){
+        $('#footercontent').removeClass('invisible');
+        $('#footercontent').addClass('visible');
     });
 });

@@ -12,10 +12,10 @@ SetBatchLines, -1
 
 ; fileInstall dependencies
 fileInstall, gui\index.html, gui\index.html
+fileInstall, gui\index.js, gui\index.js
 fileInstall, gui\bootstrap.min.css, gui\bootstrap.min.css
 fileInstall, gui\bootstrap.min.js, gui\bootstrap.min.js
 fileInstall, gui\jquery.min.js, gui\jquery.min.js
-
 
 
 ;; settings
@@ -54,9 +54,10 @@ g_dateRegex := "/^\d{4}\.\d{2}\.\d{2}$/"
 ;; Create NeutronWindow GUI and navigate to main page
 neutron := new NeutronWindow()
 neutron.Load("gui\index.html")
+neutron.Maximize()
 ; Use the Gui method to set a custom label prefix for GUI events.
 neutron.Gui("+LabelNeutron")
-neutron.Show("w1200 h900")
+neutron.Show()
 
 ; send settings strings to GUI
 neutron.doc.getElementById("saveDir").innerText := settingsObj.saveDirParent
@@ -173,7 +174,7 @@ sb_openFile(para_date)
 	neutron.qs("#mainText").innerText := l_file
 }
 
-sb_newBTN(event)
+sb_openBTN(event)
 {
 	global
 

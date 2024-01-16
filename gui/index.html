@@ -55,8 +55,8 @@
 			aria-orientation="vertical">
 			<a class="nav-link text-light active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
 				aria-controls="v-pills-home" aria-selected="true">Home</a>
-			<a class="nav-link text-light" id="v-pills-options-tab" data-toggle="pill" href="#v-pills-options" role="tab"
-				aria-controls="v-pills-options" aria-selected="false">Options</a>
+			<a class="nav-link text-light" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+				aria-controls="v-pills-settings" aria-selected="false">Settings</a>
 		</div>
 		<!-- End Sidebar -->
 
@@ -71,19 +71,15 @@
 							<button id="open" class="btn btn-secondary" onclick="ahk.sb_openBTN()">Open</button>
 						</div>
 						<h2 id="mainDate"></h2>
-						<form onsubmit="ahk.sb_saveCurrent()">
+						<form onsubmit="ahk.sb_saveCurrent(event)">
 							<h2 id="title" class="font-weight-bold"></h2>
 							<textarea id="mainText" class="form-control form-control-lg" rows="20"></textarea>
 						</form>
 					</div>
 					<!-- End v-pills-home -->
 
-					<!-- v-pills-options -->
-					<div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">
-						<nav>
-							<h2>Options</h2>
-							<small id="version"></small>
-						</nav>
+					<!-- v-pills-settings -->
+					<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
 						<form onsubmit="ahk.sb_saveParent(event)">
 							<div class="form-group">
 								<div class="form-row">
@@ -112,7 +108,7 @@
 								<button onclick="ahk.sb_exportBTN(event)" class="btn btn-primary">Export all</button>
 							</div>
 						</form>
-						<!-- End v-pills-options -->
+						<!-- End v-pills-settings -->
 					</div>
 				</div>
 				<!-- v-pills-export -->
@@ -125,7 +121,7 @@
 				<!-- End v-pills-export -->
 			</div>
 			<nav class="navbar navbar-light bg-light" role="navigation">
-				<span id="footercontent" class="navbar-text">This is some text</span>
+				<span id="footercontent" class="navbar-text"></span>
 			</nav>
 		</div>
 		<!-- End Page Contents -->
@@ -133,5 +129,4 @@
 	<!-- End Window Contents -->
 </body>
 <script src="index.js"></script>
-
 </html>
