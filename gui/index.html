@@ -31,13 +31,6 @@
 			background: #dc3545;
 		}
 
-		#myFooter {
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			height: 60px;
-			background-color: #f5f5f5;
-		}
 	</style>
 </head>
 
@@ -63,80 +56,82 @@
 			<a class="nav-link text-light active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
 				aria-controls="v-pills-home" aria-selected="true">Home</a>
 			<a class="nav-link text-light" id="v-pills-options-tab" data-toggle="pill" href="#v-pills-options" role="tab"
-			aria-controls="v-pills-options" aria-selected="false">Options</a>
+				aria-controls="v-pills-options" aria-selected="false">Options</a>
 		</div>
 		<!-- End Sidebar -->
 
 		<!-- Page Content -->
-		<div class="flex-grow-1">
-			<div class="tab-content container p-2 col-lg-10" id="v-pills-tabContent">
-				<!-- v-pills-home -->
-				<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-					<div class="d-flex float-right">
-						<button id="save" class="btn btn-primary" onclick="ahk.sb_saveCurrent()">Save</button>
-						<button id="open" class="btn btn-secondary" onclick="ahk.sb_openBTN()">Open</button>
-					</div>
-					<h2 id="mainDate"></h2>
-					<form onsubmit="ahk.sb_saveCurrent()">
-						<h2 id="title" class="font-weight-bold"></h2>
+		<div class="flex-grow-1 d-flex flex-column">
+			<div class="flex-grow-1">
+				<div class="tab-content container p-2 col-lg-10" id="v-pills-tabContent">
+					<!-- v-pills-home -->
+					<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+						<div class="d-flex float-right">
+							<button id="save" class="btn btn-primary" onclick="ahk.sb_saveCurrent()">Save</button>
+							<button id="open" class="btn btn-secondary" onclick="ahk.sb_openBTN()">Open</button>
+						</div>
+						<h2 id="mainDate"></h2>
+						<form onsubmit="ahk.sb_saveCurrent()">
+							<h2 id="title" class="font-weight-bold"></h2>
 							<textarea id="mainText" class="form-control form-control-lg" rows="20"></textarea>
-					</form>
-				</div>
-				<!-- End v-pills-home -->
+						</form>
+					</div>
+					<!-- End v-pills-home -->
 
-				<!-- v-pills-options -->
-				<div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">
-					<nav>
-						<h2>Options</h2>
-						<small id="version"></small>
-					</nav>
-					<form onsubmit="ahk.sb_saveParent(event)">
-						<div class="form-group">
-							<div class="form-row">
-								<div class="form-group col-md-10">
-									<label for="saveDir">Save Directory</label>
-									<input type="text" class="form-control" id="saveDir" value="" aria-describedby="fileHelp">
-									<small id="fileHelp" class="form-text text-muted">The parent directory where logs will be saved. Changing this will not move existing files.</small>
+					<!-- v-pills-options -->
+					<div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">
+						<nav>
+							<h2>Options</h2>
+							<small id="version"></small>
+						</nav>
+						<form onsubmit="ahk.sb_saveParent(event)">
+							<div class="form-group">
+								<div class="form-row">
+									<div class="form-group col-md-10">
+										<label for="saveDir">Save Directory</label>
+										<input type="text" class="form-control" id="saveDir" value="" aria-describedby="fileHelp">
+										<small id="fileHelp" class="form-text text-muted">The parent directory where logs will be saved.
+											Changing this will not move existing files.</small>
+									</div>
 								</div>
+								<button type="submit" class="btn btn-primary">Save</button>
 							</div>
-							<button type="submit" class="btn btn-primary">Save</button>
-						</div>
-					</form>
-					<br><br>
-					<form onsubmit="ahk.sb_saveExport(event)">
-						<div class="form-group">
-							<div class="form-row">
-								<div class="form-group col-md-10">
-									<label for="exportPath">Export File</label>
-									<input type="text" class="form-control" id="exportPath" value="" aria-describedby="exportHelp">
-									<small id="exportHelp" class="form-text text-muted">All logs will be combined into one large file for uploading, AI parsing, etc.</small>
+						</form>
+						<br><br>
+						<form onsubmit="ahk.sb_saveExport(event)">
+							<div class="form-group">
+								<div class="form-row">
+									<div class="form-group col-md-10">
+										<label for="exportPath">Export File</label>
+										<input type="text" class="form-control" id="exportPath" value="" aria-describedby="exportHelp">
+										<small id="exportHelp" class="form-text text-muted">All logs will be combined into one large file
+											for uploading, AI parsing, etc.</small>
+									</div>
 								</div>
+								<button type="submit" class="btn btn-primary">Save</button>
+								<button onclick="ahk.sb_exportBTN(event)" class="btn btn-primary">Export all</button>
 							</div>
-							<button type="submit" class="btn btn-primary">Save</button>
-							<button onclick="ahk.sb_exportBTN(event)" class="btn btn-primary">Export all</button>
-						</div>
-					</form>
-			<!-- End v-pills-options -->
-		</div>
-			<!-- v-pills-export -->
-			<!-- <div class="tab-pane fade" id="v-pills-export" role="tabpanel" aria-labelledby="v-pills-export-tab">
+						</form>
+						<!-- End v-pills-options -->
+					</div>
+				</div>
+				<!-- v-pills-export -->
+				<!-- <div class="tab-pane fade" id="v-pills-export" role="tabpanel" aria-labelledby="v-pills-export-tab">
 				<nav>
 					<h2>Export</h2>
 				</nav>
 				<button onclick="ahk.sb_exportBTN()" type="submit" class="btn btn-primary">Export all</button>
 			</div> -->
-		<!-- End v-pills-export -->
-		</div>
-		
-		<div id="myFooter" class="invisilbe">
-			<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-				<span id="footercontent" class="text-muted"></span>
+				<!-- End v-pills-export -->
+			</div>
+			<nav class="navbar navbar-light bg-light" role="navigation">
+				<span id="footercontent" class="navbar-text">This is some text</span>
 			</nav>
-		</div>
 		</div>
 		<!-- End Page Contents -->
 	</div>
 	<!-- End Window Contents -->
 </body>
 <script src="index.js"></script>
+
 </html>
